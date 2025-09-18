@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Artikel - Sahabat Gula</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        
+        <section id="listView">
+            <div class="card">
+                <div class="list-header">
+                    <h1>Daftar Artikel</h1>
+                    <button id="addArticleBtn" class="submit-btn small">Tambah Artikel Baru</button>
+                </div>
+                <div id="articleListContainer" class="article-list">
+                    <div class="spinner-wrapper"><div class="spinner"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formView" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
+                    </div>
+                    <div>
+                        <h1 class="card-title">Formulir Artikel</h1>
+                        <p class="card-subtitle">Buat atau perbarui artikel.</p>
+                    </div>
+                </div>
+                
+                <form id="articleForm" class="card-body">
+                    <button type="button" class="back-btn" id="backToListBtnForm">← Kembali ke Daftar</button>
+                    <div class="form-group span-2">
+                        <label for="title">Judul Artikel</label>
+                        <input type="text" id="title" name="title" placeholder="Judul yang menarik..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category_id">Kategori</label>
+                        <div class="select-wrapper">
+                            <select id="category_id" name="category_id"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="category_name">Buat Kategori Baru</label>
+                        <input type="text" id="category_name" name="category_name" placeholder="cth: Gaya Hidup Sehat">
+                    </div>
+
+                    <div class="form-group span-2">
+                        <label for="cover_file">Gambar Sampul</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="cover_file" name="cover_file" accept="image/*" class="file-input">
+                            <div id="fileDropArea" class="file-drop-area">
+                                <p id="fileDropText">Klik atau drag & drop gambar di sini</p>
+                            </div>
+                        </div>
+                        <div id="imagePreviewWrapper" class="image-preview-wrapper">
+                            <img id="imagePreview" class="image-preview" alt="Pratinjau Gambar">
+                            <button type="button" id="removeImageBtn" class="remove-image-btn" title="Hapus Gambar">✕</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group span-2">
+                        <label>Konten Artikel</label>
+                        <div id="editor"></div>
+                    </div>
+
+                    <div class="form-footer span-2">
+                        <button type="submit" id="submitBtn" class="submit-btn">
+                            <span class="spinner"></span>
+                            <span class="btn-text">Simpan Artikel</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="detailView" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <button type="button" class="back-btn" id="backToListBtnDetail">← Kembali ke Daftar</button>
+                    <div id="articleDetailContainer">
+                        <div class="spinner-wrapper"><div class="spinner"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
