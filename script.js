@@ -42,8 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     viewToShow.style.display = "block";
   };
 
+  // ✅ Revisi navigateTo supaya selalu hasilkan URL valid
   const navigateTo = (path) => {
-    const newPath = window.location.pathname + path;
+    const basePath = window.location.pathname.split("?")[0]; // tanpa query
+    const newPath = path ? `${basePath}${path}` : basePath;
     history.pushState({}, "", newPath);
     handleRouteChange();
   };
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "Berhasil!",
         text: "Artikel berhasil disimpan.",
       });
-      navigateTo(window.location.pathname.split("?")[0]);
+      navigateTo(""); // balik ke list
     } catch (error) {
       Swal.fire({ icon: "error", title: "Gagal", text: error.message });
     } finally {
