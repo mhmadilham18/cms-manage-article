@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const API_BASE_URL =
     "https://backend-javascript-sahabat-gula-166777420148.asia-southeast1.run.app";
   const ACCESS_TOKEN =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIyMDU0MmM5LTQzODYtNDYzNi1iOTA2LTg2M2YzNmNiYzdkZCIsImVtYWlsIjoiZml0cmlAc2FoYWJhdGd1bGEuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcm5hbWUiOiJmaXRyaSIsImlhdCI6MTc1ODE2NDA1MCwiZXhwIjoxNzU4NzY4ODUwfQ.eqAJimZiUfUdjO3_ACnPDasMX7dqOUTPug9SqxPQ2qc";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIyMDU0MmM5LTQzODYtNDYzNi1iOTA2LTg2M2YzNmNiYzdkZCIsImVtYWlsIjoiZml0cmlAc2FoYWJhdGd1bGEuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcm5hbWUiOiJmaXRyaSIsImlhdCI6MTc1OTIyNTI1MCwiZXhwIjoxNzU5ODMwMDUwfQ.BPGnhaHUpBljb2TACGJWViGZSkiu1cDn7-HfyCw_bRY";
 
   const listView = document.getElementById("listView");
   const formView = document.getElementById("formView");
